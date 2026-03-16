@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Accountant - Tax Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+ <!-- ✅ Navbar -->
+  <nav class="navbar">
+  <a href="index.html" class="logo">
+    <img src="images/logo3.png" alt="The Accountant" class="logo">
+  </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="tax-calculator.html" class="active">Tax Calculator</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" type="button" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-header">
+    <h1>Salary / Tax Calculator</h1>
+    <p>Monthly & yearly salary tax calculation based on selected tax year</p>
+  </div>
+
+  <div class="main-content">
+    <div class="calculator-container">
+
+      <!-- LEFT -->
+      <div class="calculator-form">
+        <h2>Enter Your Details</h2>
+
+        <div class="form-group">
+          <label>Gross Income</label>
+
+          <div class="income-row">
+            <input type="number" id="income" value="60000" min="0" step="0.01" />
+
+            <div class="mode-toggle" id="modeToggle">
+              <button type="button" class="mode-btn active" data-mode="monthly">Monthly</button>
+              <button type="button" class="mode-btn" data-mode="yearly">Yearly</button>
+            </div>
+          </div>
+
+          <div class="hint">Enter gross salary. Tax will be calculated according to the selected tax year.</div>
+        </div>
+
+        <div class="form-group">
+          <label>Tax Year</label>
+          <select id="taxYear"></select>
+        </div>
+
+        <button class="btn-calc" type="button" onclick="calculateTax()">
+          <i class="fas fa-calculator"></i> Calculate
+        </button>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="result-box">
+        <i class="fas fa-file-invoice result-icon"></i>
+        <h3>Your Tax Summary</h3>
+
+        <div class="result-card">
+          <p>Monthly Tax</p>
+          <h2 id="monthly-tax">PKR 0</h2>
+        </div>
+
+        <div class="result-card">
+          <p>Salary After Tax (Monthly)</p>
+          <h2 id="salary-after-tax">PKR 0</h2>
+        </div>
+
+        <div class="result-card">
+          <p>Annual Tax</p>
+          <h2 id="annual-tax">PKR 0</h2>
+        </div>
+
+        <div class="result-card">
+          <p>Annual Salary</p>
+          <h2 id="annual-salary">PKR 0</h2>
+        </div>
+
+        <!-- <button class="btn-download" id="downloadReport" type="button">
+          <i class="fas fa-download"></i> Download Report
+        </button> -->
+      </div>
+
+    </div>
+  </div>
+
+    <!-- footer -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+
+    <div class="site-footer-top">
+      <!-- Left -->
+      <div class="footer-brand">
+        <img src="images/pic7.png" alt="The Accountant" class="footer-logo" />
+
+        <span class="footer-tag">Trusted Tax & Compliance Services</span>
+
+        <p class="footer-desc">
+          We provide reliable tax filing, compliance, registration, and bookkeeping
+          services for individuals and businesses across Pakistan with a secure,
+          clear, and professional process.
+        </p>
+
+        <div class="footer-social">
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-links-area">
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="tax-calculator.html">Tax Calculator</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy-policy.html">Privacy Statement</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact</h4>
+          <a href="tel:+923001234567">+92 300 1234567</a>
+          <a href="mailto:info@theaccountant.pk">info@theaccountant.pk</a>
+          <a href="contact.html">Get Consultation</a>
+          <a href="services.html">Start Filing</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>© 2018 - 2026 The Accountant (Pvt) Limited. All rights reserved.</p>
+    
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

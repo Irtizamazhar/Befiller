@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>The Accountant - Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- ✅ Global JS -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- ✅ Navbar -->
+  <nav class="navbar">
+  <a href="index.html" class="logo">
+    <img src="images/logo3.png" alt="The Accountant" class="logo">
+  </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="tax-calculator.html">Tax Calculator</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" type="button" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Our Business Services</h1>
+    <p>Click on tabs below to filter services</p>
+  </div>
+
+  <div class="main-content">
+    <div class="services-container">
+
+      <!-- FILTER TABS -->
+      <div class="filter-tabs">
+        <button type="button" class="filter-tab active" onclick="filterServices('all', this)">All</button>
+        <button type="button" class="filter-tab" onclick="filterServices('income', this)">Income Tax Return</button>
+        <button type="button" class="filter-tab" onclick="filterServices('sales', this)">Sales Tax</button>
+        <button type="button" class="filter-tab" onclick="filterServices('company', this)">Company Registration</button>
+        <button type="button" class="filter-tab" onclick="filterServices('ip', this)">Intellectual Property</button>
+        <button type="button" class="filter-tab" onclick="filterServices('usa', this)">USA LLC</button>
+        <button type="button" class="filter-tab" onclick="filterServices('accounts', this)">Accounts</button>
+        <button type="button" class="filter-tab" onclick="filterServices('bookkeeping', this)">Book Keeping</button>
+      </div>
+
+
+
+      <!-- SERVICES GRID -->
+      <div class="services-grid">
+
+        <!-- ===================== INCOME TAX ===================== -->
+        <div class="service-card" id="income-tax" data-category="income" data-id="income_salaried">
+          <h3>Annual Income Tax Filing – Salaried <span class="badge">Popular</span></h3>
+          <p>Timeline: 2 - 3 Days</p>
+          <p>File your income tax return with expert guidance.</p>
+          <div class="card-footer">
+            <div class="price">PKR 4,500</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="income" data-id="income_sole">
+          <h3>Annual Income Tax Filing – Sole Proprietor</h3>
+          <p>Timeline: 3 - 5 Working Days</p>
+          <p>For business owners / sole proprietors.</p>
+          <div class="card-footer">
+            <div class="price">PKR 9,500</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="income" data-id="income_company">
+          <h3>Annual Income Tax Filing – Partnership / PVT Company</h3>
+          <p>Timeline: 5 Working Days</p>
+          <p>For AOPs, partnerships & companies.</p>
+          <div class="card-footer">
+            <div class="price">PKR 18,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" id="tax-notices" data-category="income" data-id="tax_notices_reply">
+          <h3>Tax Notices &amp; Replies</h3>
+          <p>Timeline: Depends on case</p>
+          <p>Support for notices, replies, documentation, and compliance handling.</p>
+          <div class="card-footer">
+            <div class="price">PKR 12,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <!-- ===================== SALES TAX ===================== -->
+        <div class="service-card" id="sales-tax" data-category="sales" data-id="sales_gst">
+          <h3>GST Registration (Sole / AOP / PVT)</h3>
+          <p>Completion Time: Working Days</p>
+          <p>Complete GST registration with documentation support.</p>
+          <div class="card-footer">
+            <div class="price">PKR 8,500</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="sales" data-id="sales_provincial">
+          <h3>Provincial ST Registration (Individual / AOP / PVT)</h3>
+          <p>Completion Time: 7 - 10 Working Days</p>
+          <p>Provincial sales tax registration assistance.</p>
+          <div class="card-footer">
+            <div class="price">PKR 12,500</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="sales" data-id="sales_return_monthly">
+          <h3>Monthly Federal / Provincial Sales Tax Return Filing</h3>
+          <p>Completion Time: 3 - 4 Working Days</p>
+          <p>Monthly return filing + reconciliation support.</p>
+          <div class="card-footer">
+            <div class="price">PKR 7,500 / Month</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <!-- ===================== COMPANY REG ===================== -->
+        <div class="service-card" id="company-registration" data-category="company" data-id="reg_pvt_llp">
+          <h3>Private Limited Company Registration / LLP</h3>
+          <p>Timeline: 3 - 10 Working Days</p>
+          <p>Excluding SECP fees (depends on authorized capital).</p>
+          <div class="card-footer">
+            <div class="price">PKR 25,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="company" data-id="reg_aop">
+          <h3>Partnership / AOP Registration</h3>
+          <p>Timeline: 7 - 15 Working Days</p>
+          <p>AOP registration with complete docs.</p>
+          <div class="card-footer">
+            <div class="price">PKR 18,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="company" data-id="reg_npo">
+          <h3>NPO Registration (SECP / Registrar)</h3>
+          <p>Timeline: 3 - 4 Months</p>
+          <p>End-to-end registration support.</p>
+          <div class="card-footer">
+            <div class="price">PKR 180,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="company" data-id="pcp_cert">
+          <h3>PCP Certification Facilitation</h3>
+          <p>Pakistan Centre of Philanthropy</p>
+          <p>Certification documentation & filing support.</p>
+          <div class="card-footer">
+            <div class="price">PKR 45,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="company" data-id="noc_foreign">
+          <h3>NOC for Foreign Investment</h3>
+          <p>Timeline: Depends on case</p>
+          <p>Guidance + documentation support.</p>
+          <div class="card-footer">
+            <div class="price">PKR 35,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <!-- ===================== IP & CERTS ===================== -->
+        <div class="service-card" data-category="ip" data-id="ip_trademark">
+          <h3>Trademark Registration (IPO-Pakistan)</h3>
+          <p>Trademark filing + objection support.</p>
+          <p>Renewal & protection services.</p>
+          <div class="card-footer">
+            <div class="price">PKR 25,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="ip" data-id="ip_copyright">
+          <h3>Copyright Registration</h3>
+          <p>Literary, software & digital content protection.</p>
+          <p>Filing & documentation support.</p>
+          <div class="card-footer">
+            <div class="price">PKR 20,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="ip" data-id="ip_patent">
+          <h3>Patent Registration</h3>
+          <p>Patent search + drafting + filing support.</p>
+          <p>Compliance process included.</p>
+          <div class="card-footer">
+            <div class="price">PKR 75,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="ip" data-id="cert_psqca">
+          <h3>PSQCA Registration</h3>
+          <p>Authority: PSQCA</p>
+          <p>License application & renewal.</p>
+          <div class="card-footer">
+            <div class="price">PKR 60,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="ip" data-id="cert_halal">
+          <h3>Halal Certification</h3>
+          <p>Recognized Authority: Pakistan Halal Authority</p>
+          <p>Documentation + audit preparation.</p>
+          <div class="card-footer">
+            <div class="price">PKR 90,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="ip" data-id="cert_iso">
+          <h3>ISO Certification Support</h3>
+          <p>ISO 9001 / 14001 / 45001</p>
+          <p>Docs + SOPs + audit preparation.</p>
+          <div class="card-footer">
+            <div class="price">PKR 120,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <!-- ===================== USA LLC ===================== -->
+        <div class="service-card" data-category="usa" data-id="usa_llc">
+          <h3>USA LLC Formation <span class="badge">Popular</span></h3>
+          <p>Timeline: 3 Business Days</p>
+          <p>Requirements: Passport, Utility Bill</p>
+          <div class="card-footer">
+            <div class="price">$799</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <!-- ===================== ACCOUNTS ===================== -->
+        <div class="service-card" id="bookkeeping" data-category="accounts" data-id="bk_bookkeeping">
+          <h3>Book Keeping Services</h3>
+          <p>Daily entries + ledger + reconciliation</p>
+          <p>Sales/purchase + journals + adjustments.</p>
+          <div class="card-footer">
+            <div class="price">PKR 10,000 / Month</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts" data-id="acct_financial_reporting">
+          <h3>Financial Reporting</h3>
+          <p>P&L, Balance Sheet, Cash Flow, Trial Balance</p>
+          <p>Monthly / Quarterly / Annual Reports</p>
+          <div class="card-footer">
+            <div class="price">PKR 15,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts" data-id="acct_bank_recon">
+          <h3>Bank Reconciliation</h3>
+          <p>Bank matching + outstanding tracking</p>
+          <p>Error correction & adjustments</p>
+          <div class="card-footer">
+            <div class="price">PKR 12,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts" data-id="acct_ap_ar">
+          <h3>Accounts Payable & Receivable</h3>
+          <p>Invoicing + supplier bills</p>
+          <p>Follow-ups + aging reports</p>
+          <div class="card-footer">
+            <div class="price">PKR 18,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts" data-id="acct_payroll">
+          <h3>Payroll Management</h3>
+          <p>Salary processing + payslips</p>
+          <p>Attendance/leave + tax deductions</p>
+          <div class="card-footer">
+            <div class="price">PKR 20,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts" data-id="acct_tax_prep">
+          <h3>Tax Preparation & Filing</h3>
+          <p>Income tax + Sales tax/VAT + Withholding</p>
+          <p>Return preparation with documentation support</p>
+          <div class="card-footer">
+            <div class="price">PKR 25,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts" data-id="acct_tax_compliance">
+          <h3>Tax Compliance Services</h3>
+          <p>Income tax + Sales tax/VAT + WHT + Compliance</p>
+          <p>Notices reply + audit/representation</p>
+          <div class="card-footer">
+            <div class="price">PKR 35,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts" data-id="wht_quarterly">
+          <h3>Quarterly Withholding Statements Filing</h3>
+          <p>Quarter-wise WHT compliance</p>
+          <p>Requirements inside</p>
+          <div class="card-footer">
+            <div class="price">PKR 15,000 / Quarter</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <!-- ===================== BOOKKEEPING ===================== -->
+        <div class="service-card" data-category="bookkeeping" data-id="bk_advisory">
+          <h3>Business Advisory</h3>
+          <p>Budgeting + forecasting + cost control</p>
+          <p>Business performance review</p>
+          <div class="card-footer">
+            <div class="price">PKR 30,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="bookkeeping" data-id="bk_cleanup">
+          <h3>Cleanup & Backlog Accounting</h3>
+          <p>Previous years data update</p>
+          <p>Error correction + restructuring</p>
+          <div class="card-footer">
+            <div class="price">PKR 40,000</div>
+            <button class="view-btn" type="button">View Details</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ MODAL -->
+  <div class="modal" id="serviceModal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" data-close>&times;</button>
+
+      <h2 id="modalTitle">Service Title</h2>
+
+      <div class="modal-meta">
+        <span id="modalTimeline"></span>
+        <span id="modalFee"></span>
+      </div>
+
+      <p id="modalNote" class="modal-note"></p>
+
+      <h4 id="modalListTitle">Requirements</h4>
+      <ul id="modalList" class="modal-list"></ul>
+    </div>
+  </div>
+
+  <!-- footer -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+
+    <div class="site-footer-top">
+      <!-- Left -->
+      <div class="footer-brand">
+        <img src="images/pic7.png" alt="The Accountant" class="footer-logo" />
+
+        <span class="footer-tag">Trusted Tax & Compliance Services</span>
+
+        <p class="footer-desc">
+          We provide reliable tax filing, compliance, registration, and bookkeeping
+          services for individuals and businesses across Pakistan with a secure,
+          clear, and professional process.
+        </p>
+
+        <div class="footer-social">
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-links-area">
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="tax-calculator.html">Tax Calculator</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy-policy.html">Privacy Statement</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact</h4>
+          <a href="tel:+923001234567">+92 300 1234567</a>
+          <a href="mailto:info@theaccountant.pk">info@theaccountant.pk</a>
+          <a href="contact.html">Get Consultation</a>
+          <a href="services.html">Start Filing</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>© 2018 - 2026 The Accountant (Pvt) Limited. All rights reserved.</p>
+     
+    </div>
+
+  </div>
+</footer>
+
+
+  <!-- ✅ ONLY MODAL DATA + LOGIC -->
+  <script>
+    const SERVICES = {
+
+      // INCOME
+      income_salaried: {
+        title: "Annual Income Tax Filing – Salaried",
+        timeline: "Timeline: 2 - 3 Days",
+        fee: "Fee: PKR 4,500",
+        note: "",
+        listTitle: "Requirements",
+        items: [
+          "Annual Salary certificate",
+          "Other Income sources if any",
+          "Annual personal expense",
+          "Details of all owned assets",
+          "Investments during the year",
+          "Disposals during the year",
+          "Other inflows/outflows during the year",
+          "Other information as required"
+        ]
+      },
+
+      tax_notices_reply: {
+        title: "Tax Notices & Replies",
+        timeline: "Completion Time: Depends on case",
+        fee: "Fee: PKR 12,000",
+        note: "Support for tax notices, replies, compliance documentation, and related advisory.",
+        listTitle: "Requirements",
+        items: [
+          "Copy of notice received",
+          "Relevant tax records/documents",
+          "Previous filings if applicable",
+          "Supporting evidence/documents",
+          "Any related correspondence"
+        ]
+      },
+
+      income_sole: {
+        title: "Annual Income Tax Filing – Sole Proprietor",
+        timeline: "Completion Time: 3 - 5 Working Days",
+        fee: "Fee: PKR 9,500",
+        note: "",
+        listTitle: "Requirements",
+        items: [
+          "Annual Accounts",
+          "Other Income sources if any",
+          "Annual personal expense",
+          "Details of all owned assets",
+          "Investments during the year",
+          "Disposals during the year",
+          "Other inflows/outflows during the year",
+          "Other information as required"
+        ]
+      },
+      income_company: {
+        title: "Annual Income Tax Filing – Partnership / PVT Company",
+        timeline: "Completion Time: 5 Working Days",
+        fee: "Fee: PKR 18,000",
+        note: "",
+        listTitle: "Requirements",
+        items: [
+          "Annual Audited Accounts",
+          "Taxes deducted at source",
+          "Other information as required"
+        ]
+      },
+
+      // SALES
+      sales_gst: {
+        title: "GST Registration (Sole / AOP / PVT)",
+        timeline: "Completion Time: Working Days",
+        fee: "Fee: PKR 8,500",
+        note: "",
+        listTitle: "Requirements",
+        items: [
+          "Bank Account Maintainance Certificate",
+          "Authorization of principal Officer",
+          "GPS-tagged photographs of the business premises",
+          "Consumer number with gas & electricity supplier + utilities meter pictures",
+          "Rent agreement/ownership docs of Office premises",
+          "Latest paid electricity bill"
+        ]
+      },
+      sales_provincial: {
+        title: "Provincial ST Registration (Individual / AOP / PVT)",
+        timeline: "Completion Time: 7 - 10 Working Days",
+        fee: "Fee: PKR 12,500",
+        note: "",
+        listTitle: "Requirements",
+        items: [
+          "Color copy of CNIC",
+          "Partnership deed (AOP)",
+          "Incorporation Certificate, MOA, AOA, Form 9 (PVT Ltd)",
+          "Rent agreement/ownership docs of Office premises",
+          "Letterhead",
+          "Latest paid electricity bill",
+          "Phone Number",
+          "Email address",
+          "Bank Account Certificate",
+          "Acquisition Date, Capacity and Business Activity",
+          "Particulars of all branches (if any)",
+          "Authorization of principal Officer",
+          "Signed Application Form"
+        ]
+      },
+      sales_return_monthly: {
+        title: "Monthly Federal / Provincial Sales Tax Return Filing",
+        timeline: "Completion Time: 3 - 4 Working Days",
+        fee: "Fee: PKR 7,500 / Month",
+        note: "",
+        listTitle: "Requirements",
+        items: [
+          "Copies of Sales Invoices",
+          "Copies of purchases Invoices",
+          "Bank Statements",
+          "Other information as required"
+        ]
+      },
+
+      // COMPANY
+      reg_pvt_llp: {
+        title: "Private Limited Company Registration / LLP",
+        timeline: "Completion Time: 3 - 10 Working Days",
+        fee: "Fee: PKR 25,000 (SECP fees excluded)",
+        note: "SECP fees depends on Authorized Capital.",
+        listTitle: "Requirements",
+        items: [
+          "Three Names of the proposed company",
+          "Scanned copies of CNICs of all Directors / subscribers",
+          "Registered address / correspondence address",
+          "Principal business of company",
+          "Nature of business activity",
+          "Authorized Capital",
+          "Paid up Capital",
+          "Value per share",
+          "Shares subscribed by each director/subscriber",
+          "Name of Chief Executive",
+          "Telephone numbers and email IDs",
+          "SECP login details (if any)"
+        ]
+      },
+      reg_aop: {
+        title: "Partnership / AOP Registration",
+        timeline: "Completion Time: 7 - 15 Working Days",
+        fee: "Fee: PKR 18,000",
+        note: "",
+        listTitle: "Requirements",
+        items: [
+          "Partnership Deed",
+          "Scanned copies of CNICs of all partners",
+          "Nature of business activity",
+          "Registered address/correspondence address of the AOP",
+          "Letterhead of the AOP",
+          "Rent agreement/ownership docs of Office premises",
+          "Latest paid electricity bill (for out of Karachi AOP only)",
+          "Phone Numbers of all partners",
+          "Email address of all partners"
+        ]
+      },
+      reg_npo: {
+        title: "NPO Registration (SECP / Registrar)",
+        timeline: "Completion Time: 3 - 4 Months",
+        fee: "Fee: PKR 180,000 (SECP fees excluded)",
+        note: "",
+        listTitle: "Requirements",
+        items: [
+          "Color copy of CNICs of members",
+          "CVs of all members",
+          "Objects / Services of NPO",
+          "Registered address/correspondence address",
+          "Name of proposed CEO",
+          "Telephone numbers and email IDs",
+          "SECP login details (if any)"
+        ]
+      },
+      pcp_cert: {
+        title: "PCP Certification Facilitation",
+        timeline: "Completion Time: Depends on documentation",
+        fee: "Fee: PKR 45,000",
+        note: "Pakistan Centre of Philanthropy certification facilitation.",
+        listTitle: "Requirements",
+        items: [
+          "Governing body list with profiles",
+          "License copy, Incorporation, and FBR documents",
+          "Purpose of certification",
+          "Programs & beneficiaries (Vision/Mission/Objectives)",
+          "List of bank accounts",
+          "Pakistan based Audited Accounts",
+          "Other documents as required"
+        ]
+      },
+      noc_foreign: {
+        title: "NOC for Foreign Investment",
+        timeline: "Completion Time: Depends on case",
+        fee: "Fee: PKR 35,000",
+        note: "",
+        listTitle: "Requirements",
+        items: [
+          "Case-specific documents (shared after initial review)",
+          "Investment details",
+          "Business details",
+          "Other information as required"
+        ]
+      },
+
+      // IP
+      ip_trademark: {
+        title: "Trademark Registration (IPO-Pakistan)",
+        timeline: "Completion Time: Depends on authority process",
+        fee: "Fee: PKR 25,000",
+        note: "Authority: IPO-Pakistan",
+        listTitle: "Includes",
+        items: [
+          "Trademark search & availability check",
+          "Application filing",
+          "Objection reply handling",
+          "Renewal & protection services"
+        ]
+      },
+      ip_copyright: {
+        title: "Copyright Registration",
+        timeline: "Completion Time: Depends on authority process",
+        fee: "Fee: PKR 20,000",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Literary, software & digital content protection",
+          "Copyright filing & documentation",
+          "Legal ownership proof assistance"
+        ]
+      },
+      ip_patent: {
+        title: "Patent Registration",
+        timeline: "Completion Time: Depends on authority process",
+        fee: "Fee: PKR 75,000",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Patent search & documentation",
+          "Technical drafting support",
+          "Filing & compliance process"
+        ]
+      },
+      cert_psqca: {
+        title: "PSQCA Registration",
+        timeline: "Completion Time: Depends on authority process",
+        fee: "Fee: PKR 60,000",
+        note: "Authority: PSQCA",
+        listTitle: "Includes",
+        items: [
+          "Product certification process",
+          "License application & renewal",
+          "Compliance documentation"
+        ]
+      },
+      cert_halal: {
+        title: "Halal Certification",
+        timeline: "Completion Time: Depends on authority process",
+        fee: "Fee: PKR 90,000",
+        note: "Authority: Pakistan Halal Authority",
+        listTitle: "Includes",
+        items: [
+          "Halal product documentation",
+          "Audit preparation",
+          "Certification assistance"
+        ]
+      },
+      cert_iso: {
+        title: "ISO Certification Support",
+        timeline: "Completion Time: Depends on scope",
+        fee: "Fee: PKR 120,000",
+        note: "ISO standards issued by International Organization for Standardization",
+        listTitle: "Includes",
+        items: [
+          "ISO documentation preparation",
+          "Policy & SOP development",
+          "Audit preparation",
+          "Certification coordination",
+          "ISO 9001 / ISO 14001 / ISO 45001"
+        ]
+      },
+
+      // USA
+      usa_llc: {
+        title: "USA LLC Formation",
+        timeline: "Timeline: 3 Business Days",
+        fee: "Fee: $799",
+        note: "",
+        listTitle: "Requirements",
+        items: ["Passport", "Utility Bill"]
+      },
+
+      // ACCOUNTS
+      bk_bookkeeping: {
+        title: "Book Keeping Services",
+        timeline: "Completion Time: Monthly",
+        fee: "Fee: PKR 10,000 / Month",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Daily transaction recording",
+          "Sales & purchase entries",
+          "Bank & cash book maintenance",
+          "Journal entries & adjustments",
+          "Ledger posting & reconciliation"
+        ]
+      },
+      acct_financial_reporting: {
+        title: "Financial Reporting",
+        timeline: "Completion Time: Monthly / Quarterly / Annual",
+        fee: "Fee: PKR 15,000",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Profit & Loss Statement",
+          "Balance Sheet",
+          "Cash Flow Statement",
+          "Trial Balance",
+          "Monthly / Quarterly / Annual Reports"
+        ]
+      },
+      acct_bank_recon: {
+        title: "Bank Reconciliation",
+        timeline: "Completion Time: Monthly",
+        fee: "Fee: PKR 12,000",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Bank statement matching",
+          "Outstanding cheques & deposits tracking",
+          "Error correction & adjustments"
+        ]
+      },
+      acct_ap_ar: {
+        title: "Accounts Payable & Receivable",
+        timeline: "Completion Time: Monthly",
+        fee: "Fee: PKR 18,000",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Customer invoicing",
+          "Supplier bill management",
+          "Payment follow-ups",
+          "Aging reports preparation"
+        ]
+      },
+      acct_payroll: {
+        title: "Payroll Management",
+        timeline: "Completion Time: Monthly",
+        fee: "Fee: PKR 20,000",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Salary processing",
+          "Payslip preparation",
+          "Attendance & leave record",
+          "Tax deduction calculations"
+        ]
+      },
+      acct_tax_prep: {
+        title: "Tax Preparation & Filing",
+        timeline: "Completion Time: Depends on scope",
+        fee: "Fee: PKR 25,000",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Income tax working",
+          "Sales tax / VAT calculation",
+          "Withholding tax reports",
+          "Tax return preparation"
+        ]
+      },
+      acct_tax_compliance: {
+        title: "Tax Compliance Services",
+        timeline: "Completion Time: Depends on scope and case",
+        fee: "Fee: PKR 35,000",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Income Tax Compliance",
+          "Sales Tax / VAT Compliance",
+          "Withholding Tax Management",
+          "Corporate & Regulatory Compliance",
+          "Tax Advisory & Planning",
+          "Audit & Representation",
+          "International Tax Support"
+        ]
+      },
+      wht_quarterly: {
+        title: "Quarterly Withholding Statements Filing",
+        timeline: "Timeline: Quarterly",
+        fee: "Fee: PKR 15,000 / Quarter",
+        note: "",
+        listTitle: "Requirements",
+        items: [
+          "Details of Taxes deducted at source during each quarter",
+          "Other information as required"
+        ]
+      },
+
+      // BOOKKEEPING TAB
+      bk_advisory: {
+        title: "Business Advisory",
+        timeline: "Completion Time: Depends on scope",
+        fee: "Fee: PKR 30,000",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Budget planning",
+          "Financial forecasting",
+          "Cost control analysis",
+          "Business performance review"
+        ]
+      },
+      bk_cleanup: {
+        title: "Cleanup & Backlog Accounting",
+        timeline: "Completion Time: Depends on records",
+        fee: "Fee: PKR 40,000",
+        note: "",
+        listTitle: "Includes",
+        items: [
+          "Previous years data update",
+          "Error correction",
+          "Accounts restructuring"
+        ]
+      }
+    };
+
+    (function initServiceModal() {
+      const modal = document.getElementById("serviceModal");
+      if (!modal) return;
+
+      const titleEl = document.getElementById("modalTitle");
+      const timelineEl = document.getElementById("modalTimeline");
+      const feeEl = document.getElementById("modalFee");
+      const noteEl = document.getElementById("modalNote");
+      const listTitleEl = document.getElementById("modalListTitle");
+      const listEl = document.getElementById("modalList");
+
+      function openModal(serviceId) {
+        const data = SERVICES[serviceId];
+        if (!data) return;
+
+        titleEl.textContent = data.title || "";
+        timelineEl.textContent = data.timeline || "";
+        feeEl.textContent = data.fee || "";
+
+        noteEl.textContent = data.note || "";
+        noteEl.style.display = data.note ? "block" : "none";
+
+        listTitleEl.textContent = data.listTitle || "Requirements";
+        listEl.innerHTML = "";
+
+        (data.items || []).forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          listEl.appendChild(li);
+        });
+
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".view-btn");
+        if (btn) {
+          const card = btn.closest(".service-card");
+          const id = card?.getAttribute("data-id");
+          if (id) openModal(id);
+          return;
+        }
+        if (e.target.matches("[data-close]")) closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      });
+    })();
+  </script>
+</body>
+
+</html>

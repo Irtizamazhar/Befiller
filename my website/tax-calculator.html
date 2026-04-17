@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Accountant - Tax Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+
+  <style>
+    /* Reduce header height and spacing */
+    .page-header {
+      padding: 45px 20px 45px 20px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .page-header p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    /* Move calculator upward */
+    .main-content {
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .calculator-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px 30px 20px;
+    }
+
+    /* Make form and result boxes more compact */
+    .calculator-form {
+      flex: 1;
+      min-width: 280px;
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .calculator-form h2 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      margin-bottom: 8px;
+    }
+
+    .income-row input {
+      padding: 10px 12px;
+    }
+
+    .mode-btn {
+      padding: 6px 18px;
+    }
+
+    .btn-calc {
+      padding: 12px;
+      margin-top: 15px;
+    }
+
+    .result-box {
+      flex: 1;
+      min-width: 280px;
+      padding: 25px;
+    }
+
+    .result-box h3 {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .result-card {
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .result-card h2 {
+      font-size: 22px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .calculator-container {
+        flex-direction: column;
+        padding: 10px 15px 20px 15px;
+        gap: 20px;
+      }
+      
+      .calculator-form, .result-box {
+        padding: 20px;
+      }
+      
+      .page-header {
+        padding: 15px 15px 5px 15px;
+      }
+      
+      .page-header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+ <!-- ✅ Navbar -->
+  <nav class="navbar">
+  <a href="index.html" class="logo">
+    <img src="images/logo3.png" alt="The Accountant" class="logo">
+  </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="tax-calculator.html" class="active">Tax Calculator</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" type="button" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-header">
+    <h1>Salary / Tax Calculator</h1>
+    <p>Monthly & yearly salary tax calculation based on selected tax year</p>
+  </div>
+
+  <div class="main-content">
+    <div class="calculator-container">
+
+      <!-- LEFT -->
+      <div class="calculator-form">
+        <h2>Enter Your Details</h2>
+
+        <div class="form-group">
+          <label>Gross Income</label>
+
+          <div class="income-row">
+            <input type="number" id="income" value="60000" min="0" step="0.01" />
+
+            <div class="mode-toggle" id="modeToggle">
+              <button type="button" class="mode-btn active" data-mode="monthly">Monthly</button>
+              <button type="button" class="mode-btn" data-mode="yearly">Yearly</button>
+            </div>
+          </div>
+
+          <div class="hint">Enter gross salary. Tax will be calculated according to the selected tax year.</div>
+        </div>
+
+        <div class="form-group">
+          <label>Tax Year</label>
+          <select id="taxYear"></select>
+        </div>
+
+        <button class="btn-calc" type="button" onclick="calculateTax()">
+          <i class="fas fa-calculator"></i> Calculate
+        </button>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="result-box">
+        <i class="fas fa-file-invoice result-icon"></i>
+        <h3>Your Tax Summary</h3>
+
+        <div class="result-card">
+          <p>Monthly Tax</p>
+          <h2 id="monthly-tax">PKR 0</h2>
+        </div>
+
+        <div class="result-card">
+          <p>Salary After Tax (Monthly)</p>
+          <h2 id="salary-after-tax">PKR 0</h2>
+        </div>
+
+        <div class="result-card">
+          <p>Annual Tax</p>
+          <h2 id="annual-tax">PKR 0</h2>
+        </div>
+
+        <div class="result-card">
+          <p>Annual Salary</p>
+          <h2 id="annual-salary">PKR 0</h2>
+        </div>
+
+        <!-- <button class="btn-download" id="downloadReport" type="button">
+          <i class="fas fa-download"></i> Download Report
+        </button> -->
+      </div>
+
+    </div>
+  </div>
+
+    <!-- footer -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+
+    <div class="site-footer-top">
+      <!-- Left -->
+      <div class="footer-brand">
+        <img src="images/piic2.png" alt="The Accountant" class="footer-logo" />
+
+        <span class="footer-tag">Trusted Tax & Compliance Services</span>
+
+        <p class="footer-desc">
+          We provide reliable tax filing, compliance, registration, and bookkeeping
+          services for individuals and businesses across Pakistan with a secure,
+          clear, and professional process.
+        </p>
+
+        <div class="footer-social">
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-links-area">
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="tax-calculator.html">Tax Calculator</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy-policy.html">Privacy Statement</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact</h4>
+          <a href="tel:+923336815891">+92333 6815891</a>
+          <a href="mailto:info@theaccountant.pk">info@theaccountant.pk</a>
+          <a href="contact.html">Get Consultation</a>
+          <a href="services.html">Start Filing</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>© 2018 - 2026 The Accountant (Pvt) Limited. All rights reserved.</p>
+    
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Tax brackets for different years (Pakistan)
+  const taxBrackets = {
+    "2024-2025": [
+      { min: 0, max: 600000, rate: 0 },
+      { min: 600001, max: 1200000, rate: 5 },
+      { min: 1200001, max: 2200000, rate: 10 },
+      { min: 2200001, max: 3200000, rate: 15 },
+      { min: 3200001, max: 4100000, rate: 20 },
+      { min: 4100001, max: 5000000, rate: 25 },
+      { min: 5000001, max: Infinity, rate: 30 }
+    ],
+    "2023-2024": [
+      { min: 0, max: 600000, rate: 0 },
+      { min: 600001, max: 1200000, rate: 5 },
+      { min: 1200001, max: 2200000, rate: 10 },
+      { min: 2200001, max: 3200000, rate: 15 },
+      { min: 3200001, max: 4100000, rate: 20 },
+      { min: 4100001, max: 5000000, rate: 25 },
+      { min: 5000001, max: Infinity, rate: 30 }
+    ],
+    "2022-2023": [
+      { min: 0, max: 600000, rate: 0 },
+      { min: 600001, max: 1200000, rate: 5 },
+      { min: 1200001, max: 2400000, rate: 10 },
+      { min: 2400001, max: 3600000, rate: 15 },
+      { min: 3600001, max: 6000000, rate: 20 },
+      { min: 6000001, max: Infinity, rate: 25 }
+    ],
+    "2021-2022": [
+      { min: 0, max: 600000, rate: 0 },
+      { min: 600001, max: 1200000, rate: 5 },
+      { min: 1200001, max: 2400000, rate: 10 },
+      { min: 2400001, max: 3600000, rate: 15 },
+      { min: 3600001, max: 6000000, rate: 20 },
+      { min: 6000001, max: Infinity, rate: 25 }
+    ]
+  };
+
+  let currentMode = "monthly";
+
+  // Populate tax year dropdown
+  function populateTaxYears() {
+    const select = document.getElementById("taxYear");
+    const years = Object.keys(taxBrackets);
+    select.innerHTML = "";
+    years.forEach(year => {
+      const option = document.createElement("option");
+      option.value = year;
+      option.textContent = year;
+      select.appendChild(option);
+    });
+  }
+
+  // Calculate tax based on annual income
+  function calculateTaxAmount(annualIncome, year) {
+    const brackets = taxBrackets[year];
+    if (!brackets) return 0;
+
+    let tax = 0;
+    let remainingIncome = annualIncome;
+
+    for (let i = 0; i < brackets.length; i++) {
+      const bracket = brackets[i];
+      const taxableInBracket = Math.min(remainingIncome, bracket.max - bracket.min);
+      
+      if (taxableInBracket > 0) {
+        tax += taxableInBracket * (bracket.rate / 100);
+        remainingIncome -= taxableInBracket;
+      }
+      
+      if (remainingIncome <= 0) break;
+    }
+    
+    return tax;
+  }
+
+  // Main calculate function
+  function calculateTax() {
+    const incomeInput = parseFloat(document.getElementById("income").value);
+    const taxYear = document.getElementById("taxYear").value;
+    
+    if (isNaN(incomeInput) || incomeInput < 0) {
+      alert("Please enter a valid income amount");
+      return;
+    }
+
+    let annualIncome;
+    if (currentMode === "monthly") {
+      annualIncome = incomeInput * 12;
+    } else {
+      annualIncome = incomeInput;
+    }
+
+    const annualTax = calculateTaxAmount(annualIncome, taxYear);
+    const monthlyTax = annualTax / 12;
+    const monthlySalaryAfterTax = (annualIncome / 12) - monthlyTax;
+    const annualSalaryAfterTax = annualIncome - annualTax;
+
+    // Update display
+    document.getElementById("monthly-tax").innerHTML = `PKR ${monthlyTax.toFixed(2)}`;
+    document.getElementById("salary-after-tax").innerHTML = `PKR ${monthlySalaryAfterTax.toFixed(2)}`;
+    document.getElementById("annual-tax").innerHTML = `PKR ${annualTax.toFixed(2)}`;
+    document.getElementById("annual-salary").innerHTML = `PKR ${annualIncome.toFixed(2)}`;
+  }
+
+  // Mode toggle functionality
+  function initModeToggle() {
+    const modeBtns = document.querySelectorAll(".mode-btn");
+    modeBtns.forEach(btn => {
+      btn.addEventListener("click", function() {
+        modeBtns.forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+        currentMode = this.getAttribute("data-mode");
+        
+        // Adjust placeholder or hint if needed
+        const incomeInput = document.getElementById("income");
+        if (currentMode === "monthly") {
+          incomeInput.placeholder = "Enter monthly salary";
+        } else {
+          incomeInput.placeholder = "Enter annual salary";
+        }
+        
+        calculateTax(); // Auto recalculate
+      });
+    });
+  }
+
+  // Initialize on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    populateTaxYears();
+    initModeToggle();
+    calculateTax();
+  });
+</script>
+
+</body>
+</html>

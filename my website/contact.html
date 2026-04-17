@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Accountant - Contact</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ✅ CSS -->
+  <link rel="stylesheet" href="style.css" />
+   <style>
+    /* Reduce header height and center content */
+    .page-header {
+      padding: 45px 20px 45px 20px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .page-header p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    /* Adjust main content top spacing */
+    .main-content {
+      padding-top: 10px;
+    }
+
+    /* Center section head */
+    .section-head {
+      text-align: center;
+    }
+
+    /* Zoom in animation for contact section */
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .contact-wrap {
+      animation: zoomIn 0.5s ease-out;
+    }
+
+    /* Success message styling */
+    .success-message {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <!-- ✅ JS -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+ <!-- ✅ Navbar -->
+  <nav class="navbar">
+  <a href="index.html" class="logo">
+    <img src="images/logo3.png" alt="The Accountant" class="logo">
+  </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="tax-calculator.html">Tax Calculator</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" type="button" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ✅ PAGE HEADER -->
+  <div class="page-header">
+    <h1>Contact Us</h1>
+    <p>We usually respond quickly. Send us a message.</p>
+  </div>
+
+  <!-- ✅ CONTENT -->
+  <div class="main-content">
+    <div class="contact-wrap">
+      <div class="contact-card">
+        <h2>Get in touch</h2>
+        <p>Fill the form and our team will reach out.</p>
+
+        <form class="contact-form" id="contactForm">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" id="contactName" placeholder="Your name" required />
+          </div>
+
+          <div class="field">
+            <label>Phone</label>
+            <input type="tel" id="contactPhone" placeholder="03xx xxxxxxx" required />
+          </div>
+
+          <div class="field">
+            <label>Email</label>
+            <input type="email" id="contactEmail" placeholder="your@email.com" />
+          </div>
+
+          <div class="field">
+            <label>Message</label>
+            <textarea id="contactMessage" rows="4" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <button class="btn-calc" type="submit">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          
+          <div id="successMessage" class="success-message" style="display: none;">
+            <i class="fa-solid fa-check-circle"></i> Thank you! Your message has been sent. We'll get back to you soon.
+          </div>
+        </form>
+      </div>
+
+      <div class="contact-card contact-info">
+        <h2>Contact Info</h2>
+
+        <div class="info-row">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <div class="info-title">Phone</div>
+            <a href="tel:+923336815891" class="info-link">+92333 6815891</a>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <div class="info-title">Email</div>
+            <a href="mailto:info@theaccountant.pk" class="info-link">info@theaccountant.pk</a>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <i class="fa-brands fa-whatsapp"></i>
+          <div>
+            <div class="info-title">WhatsApp</div>
+            <a class="info-link" href="https://wa.me/923336815891" target="_blank">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ FOOTER -->
+  <footer class="site-footer">
+  <div class="site-footer-inner">
+
+    <div class="site-footer-top">
+      <!-- Left -->
+      <div class="footer-brand">
+        <img src="images/piic2.png" alt="The Accountant" class="footer-logo" />
+
+        <span class="footer-tag">Trusted Tax & Compliance Services</span>
+
+        <p class="footer-desc">
+          We provide reliable tax filing, compliance, registration, and bookkeeping
+          services for individuals and businesses across Pakistan with a secure,
+          clear, and professional process.
+        </p>
+
+        <div class="footer-social">
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://wa.me/923336815891" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-links-area">
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="tax-calculator.html">Tax Calculator</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy-policy.html">Privacy Statement</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact</h4>
+          <a href="tel:+923336815891">+92333 6815891</a>
+          <a href="mailto:info@theaccountant.pk">info@theaccountant.pk</a>
+          <a href="contact.html">Get Consultation</a>
+          <a href="services.html">Start Filing</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>© 2018 - 2026 The Accountant (Pvt) Limited. All rights reserved.</p>
+      
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Handle form submission
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('contactName').value;
+    const phone = document.getElementById('contactPhone').value;
+    const email = document.getElementById('contactEmail').value;
+    const message = document.getElementById('contactMessage').value;
+    
+    // Validate required fields
+    if (!name || !phone || !message) {
+      alert('Please fill in all required fields (Name, Phone, Message)');
+      return;
+    }
+    
+    // Create email body
+    const body = `Name: ${name}%0A%0APhone: ${phone}%0A%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
+    
+    // Open email client
+    window.location.href = `mailto:info@theaccountant.pk?subject=Contact Form Query from ${name}&body=${body}`;
+    
+    // Show success message
+    const successMsg = document.getElementById('successMessage');
+    successMsg.style.display = 'block';
+    
+    // Clear form fields
+    document.getElementById('contactName').value = '';
+    document.getElementById('contactPhone').value = '';
+    document.getElementById('contactEmail').value = '';
+    document.getElementById('contactMessage').value = '';
+    
+    // Scroll to top smoothly
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
+    // Hide success message after 5 seconds
+    setTimeout(function() {
+      successMsg.style.display = 'none';
+    }, 5000);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Accountant - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Hero section full width fix - gap kam kiya */
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px !important;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .hero-left {
+      flex: 1;
+      padding-right: 15px;
+    }
+    
+    .hero-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    
+    .hero-right img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      display: block;
+    }
+    
+    /* Remove any default margins/padding from hero section */
+    .hero {
+      padding: 40px 0;
+      background: #f8f9fa;
+    }
+    
+    @media (max-width: 992px) {
+      .hero-container {
+        flex-direction: column;
+        gap: 30px !important;
+      }
+      .hero-left {
+        text-align: center;
+        padding-right: 0;
+      }
+      .hero-right {
+        justify-content: center;
+        width: 100%;
+      }
+      .hero-right img {
+        max-width: 500px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-right img {
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <!-- JS -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+ <!-- ✅ Navbar -->
+  <nav class="navbar">
+  <a href="index.html" class="logo">
+    <img src="images/logo3.png" alt="The Accountant" class="logo">
+  </a>
+
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="active">Home</a>
+    <a href="services.html" >Services</a>
+    <a href="tax-calculator.html">Tax Calculator</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero hero-original">
+    <div class="hero-container">
+      <div class="hero-left">
+        <h1>
+          Pakistan's
+          <span>#1 Tax</span> Filing Platform
+        </h1>
+
+        <p>
+          File your income tax returns with confidence through expert guidance,
+          secure handling, and a smooth step-by-step process for individuals and businesses.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="primary-btn" href="services.html">Get Started</a>
+          <a class="outline-btn" href="tax-calculator.html">Calculate Tax</a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <h3>Fast</h3>
+            <p>Processing</p>
+          </div>
+          <div>
+            <h3>Secure</h3>
+            <p>Data Privacy</p>
+          </div>
+          <div>
+            <h3>Expert</h3>
+            <p>Support</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img src="images/front.jpg" alt="The Accountant" />
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="trust">
+    <div class="trust-container">
+      <div><i class="fas fa-shield-alt"></i> Secure Document Handling</div>
+      <div><i class="fas fa-user-check"></i> Expert Tax Guidance</div>
+      <div><i class="fas fa-clock"></i> Fast Response Time</div>
+      <div><i class="fas fa-check-circle"></i> Clear Process</div>
+    </div>
+  </section>
+
+<!-- POPULAR SERVICES -->
+<section class="popular">
+  <div class="section-head">
+    <h2>Popular Services</h2>
+    <p>Explore the services most commonly requested by our clients.</p>
+  </div>
+
+  <div class="popular-grid">
+    <a href="services.html#income-tax" class="popular-card">
+      <i class="fas fa-file-invoice-dollar"></i>
+      <h3>Income Tax Return Filing</h3>
+      <p>Professional support for salaried individuals, freelancers, and businesses.</p>
+      <span class="pill">Explore Service</span>
+    </a>
+
+    <a href="services.html#company-registration" class="popular-card">
+      <i class="fas fa-building"></i>
+      <h3>Company Registration</h3>
+      <p>Start your business with proper documentation and guided registration support.</p>
+      <span class="pill">Explore Service</span>
+    </a>
+
+    <a href="services.html#sales-tax" class="popular-card">
+      <i class="fas fa-receipt"></i>
+      <h3>Sales Tax / GST Support</h3>
+      <p>Get help with registration, filing, and related sales tax compliance matters.</p>
+      <span class="pill">Explore Service</span>
+    </a>
+
+    <a href="services.html#bookkeeping" class="popular-card">
+      <i class="fas fa-book"></i>
+      <h3>Bookkeeping Services</h3>
+      <p>Keep financial records organized with reliable monthly bookkeeping support.</p>
+      <span class="pill">Explore Service</span>
+    </a>
+
+    <a href="services.html#tax-notices" class="popular-card">
+      <i class="fas fa-envelope-open-text"></i>
+      <h3>Tax Notices & Replies</h3>
+      <p>Assistance with notice handling, drafting replies, and compliance documentation.</p>
+      <span class="pill">Explore Service</span>
+    </a>
+
+    <a href="tax-calculator.html" class="popular-card">
+      <i class="fas fa-calculator"></i>
+      <h3>Salary Tax Calculator</h3>
+      <p>Estimate salary tax quickly according to the selected tax year.</p>
+      <span class="pill">Use Calculator</span>
+    </a>
+  </div>
+
+  <div class="section-cta">
+    <a class="cta-link" href="services.html">View all services →</a>
+  </div>
+</section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="popular">
+    <div class="section-head">
+      <h2>Why Choose The Accountant</h2>
+      <p>We focus on making tax and compliance services easier, clearer, and more dependable.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-box">
+        <i class="fas fa-list-check"></i>
+        <h3>Clear Requirements</h3>
+        <p>We guide you about documents and next steps so nothing important is missed.</p>
+      </div>
+
+      <div class="about-box">
+        <i class="fas fa-comments"></i>
+        <h3>Simple Communication</h3>
+        <p>We explain everything in a straightforward way to reduce confusion.</p>
+      </div>
+
+      <div class="about-box">
+       <i class="fas fa-shield-alt"></i>
+        <h3>Reliable Handling</h3>
+        <p>Your records and personal information are handled carefully and professionally.</p>
+      </div>
+
+      <div class="about-box">
+        <i class="fas fa-briefcase"></i>
+        <h3>Professional Support</h3>
+        <p>From filing to registration and compliance, we support you at every stage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMPLE PROCESS -->
+  <section class="team">
+    <div class="section-head">
+      <h2>How It Works</h2>
+      <p>A simple process designed to save your time and keep everything organized.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="avatar">1</div>
+        <h3>Share Your Details</h3>
+        <p>Tell us which service you need and share the required documents.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="avatar">2</div>
+        <h3>We Review & Guide</h3>
+        <p>Our team reviews your case and guides you on the next steps clearly.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="avatar">3</div>
+        <h3>Service Completion</h3>
+        <p>We complete the filing, registration, or compliance work professionally.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Need Help With Filing?</h2>
+    <p>View requirements, timelines, and get expert guidance.</p>
+    <a href="services.html" style="text-decoration: none;">
+      <button type="button">Explore Services</button>
+    </a>
+  </section>
+
+  <!-- footer -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+
+    <div class="site-footer-top">
+      <!-- Left -->
+      <div class="footer-brand">
+        <img src="images/piic2.png" alt="The Accountant" class="footer-logo" />
+
+        <span class="footer-tag">Trusted Tax & Compliance Services</span>
+
+        <p class="footer-desc">
+          We provide reliable tax filing, compliance, registration, and bookkeeping
+          services for individuals and businesses across Pakistan with a secure,
+          clear, and professional process.
+        </p>
+
+        <div class="footer-social">
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://wa.me/923336815891" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-links-area">
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="tax-calculator.html">Tax Calculator</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy-policy.html">Privacy Statement</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact</h4>
+          <a href="tel:+923336815891">+92333 6815891</a>
+          <a href="mailto:info@theaccountant.pk">info@theaccountant.pk</a>
+          <a href="contact.html">Get Consultation</a>
+          <a href="services.html">Start Filing</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>© 2018 - 2026 The Accountant (Pvt) Limited. All rights reserved.</p>
+
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

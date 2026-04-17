@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>The Accountant - Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Additional CSS to override grid layout -->
+  <style>
+    /* Make services grid 4 items per line on larger screens */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    /* Adjust for tablets */
+    @media (max-width: 992px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Move services portion upward - reduce spacing */
+    .main-content {
+      padding-top: 0;
+    }
+
+    .services-container {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    /* Adjust page header spacing */
+    .page-header {
+      margin-bottom: 15px;
+      padding-bottom: 45px;
+      padding-top: 45px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .page-header p {
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    .filter-tabs {
+      margin-top: 5px;
+      margin-bottom: 25px;
+    }
+
+    /* Style for Get Quote button with animation */
+    .get-quote-btn {
+      background-color: #1e3a5f;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      transition: all 0.3s ease;
+      transform: scale(1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Hover animation */
+    .get-quote-btn:hover {
+      background-color: #0f2b44;
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Click/press animation */
+    .get-quote-btn:active {
+      transform: scale(0.95);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+    }
+  </style>
+
+  <!-- ✅ Global JS -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- ✅ Navbar -->
+  <nav class="navbar">
+  <a href="index.html" class="logo">
+    <img src="images/logo3.png" alt="The Accountant" class="logo">
+  </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="tax-calculator.html">Tax Calculator</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" type="button" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Professional Tax & Business Services</h1>
+    <p>Expert compliance, registration, and financial solutions — trusted by individuals, startups, and global clients.</p>
+  </div>
+
+  <div class="main-content">
+    <div class="services-container">
+
+      <!-- FILTER TABS -->
+      <div class="filter-tabs">
+        <button type="button" class="filter-tab active" onclick="filterServices('all', this)">All</button>
+        <button type="button" class="filter-tab" onclick="filterServices('income', this)">Income Tax Return</button>
+        <button type="button" class="filter-tab" onclick="filterServices('sales', this)">Sales Tax</button>
+        <button type="button" class="filter-tab" onclick="filterServices('company', this)">Company Registration</button>
+        <button type="button" class="filter-tab" onclick="filterServices('ip', this)">Intellectual Property</button>
+        <button type="button" class="filter-tab" onclick="filterServices('usa', this)">USA LLC</button>
+        <button type="button" class="filter-tab" onclick="filterServices('accounts', this)">Accounts</button>
+        <button type="button" class="filter-tab" onclick="filterServices('bookkeeping', this)">Book Keeping</button>
+      </div>
+
+      <!-- SERVICES GRID -->
+      <div class="services-grid">
+
+        <!-- ===================== INCOME TAX ===================== -->
+        <div class="service-card" id="income-tax" data-category="income">
+          <h3>Annual Income Tax Filing – Salaried <span class="badge">Popular</span></h3>
+          <p>Timeline: 2 - 3 Days</p>
+          <p>File your income tax return with expert guidance.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Annual Income Tax Filing – Salaried&body=Hello, I would like to get a quote for Annual Income Tax Filing – Salaried service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="income">
+          <h3>Annual Income Tax Filing – Sole Proprietor</h3>
+          <p>Timeline: 3 - 5 Working Days</p>
+          <p>For business owners / sole proprietors.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Annual Income Tax Filing – Sole Proprietor&body=Hello, I would like to get a quote for Annual Income Tax Filing – Sole Proprietor service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="income">
+          <h3>Annual Income Tax Filing – Partnership / PVT Company</h3>
+          <p>Timeline: 5 Working Days</p>
+          <p>For AOPs, partnerships & companies.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Annual Income Tax Filing – Partnership / PVT Company&body=Hello, I would like to get a quote for Annual Income Tax Filing – Partnership / PVT Company service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" id="tax-notices" data-category="income">
+          <h3>Tax Notices &amp; Replies</h3>
+          <p>Timeline: Depends on case</p>
+          <p>Support for notices, replies, documentation, and compliance handling.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Tax Notices & Replies&body=Hello, I would like to get a quote for Tax Notices & Replies service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- ===================== SALES TAX ===================== -->
+        <div class="service-card" id="sales-tax" data-category="sales">
+          <h3>GST Registration (Sole / AOP / PVT)</h3>
+          <p>Completion Time: Working Days</p>
+          <p>Complete GST registration with documentation support.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: GST Registration&body=Hello, I would like to get a quote for GST Registration service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="sales">
+          <h3>Provincial ST Registration (Individual / AOP / PVT)</h3>
+          <p>Completion Time: 7 - 10 Working Days</p>
+          <p>Provincial sales tax registration assistance.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Provincial ST Registration&body=Hello, I would like to get a quote for Provincial ST Registration service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="sales">
+          <h3>Monthly Federal / Provincial Sales Tax Return Filing</h3>
+          <p>Completion Time: 3 - 4 Working Days</p>
+          <p>Monthly return filing + reconciliation support.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Monthly Sales Tax Return Filing&body=Hello, I would like to get a quote for Monthly Sales Tax Return Filing service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- ===================== COMPANY REG ===================== -->
+        <div class="service-card" id="company-registration" data-category="company">
+          <h3>Private Limited Company Registration / LLP</h3>
+          <p>Timeline: 3 - 10 Working Days</p>
+          <p>Excluding SECP fees (depends on authorized capital).</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Private Limited Company Registration / LLP&body=Hello, I would like to get a quote for Private Limited Company Registration / LLP service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="company">
+          <h3>Partnership / AOP Registration</h3>
+          <p>Timeline: 7 - 15 Working Days</p>
+          <p>AOP registration with complete docs.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Partnership / AOP Registration&body=Hello, I would like to get a quote for Partnership / AOP Registration service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="company">
+          <h3>NPO Registration (SECP / Registrar)</h3>
+          <p>Timeline: 3 - 4 Months</p>
+          <p>End-to-end registration support.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: NPO Registration&body=Hello, I would like to get a quote for NPO Registration service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="company">
+          <h3>PCP Certification Facilitation</h3>
+          <p>Pakistan Centre of Philanthropy</p>
+          <p>Certification documentation & filing support.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: PCP Certification Facilitation&body=Hello, I would like to get a quote for PCP Certification Facilitation service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="company">
+          <h3>NOC for Foreign Investment</h3>
+          <p>Timeline: Depends on case</p>
+          <p>Guidance + documentation support.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: NOC for Foreign Investment&body=Hello, I would like to get a quote for NOC for Foreign Investment service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- ===================== IP & CERTS ===================== -->
+        <div class="service-card" data-category="ip">
+          <h3>Trademark Registration (IPO-Pakistan)</h3>
+          <p>Trademark filing + objection support.</p>
+          <p>Renewal & protection services.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Trademark Registration&body=Hello, I would like to get a quote for Trademark Registration service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="ip">
+          <h3>Copyright Registration</h3>
+          <p>Literary, software & digital content protection.</p>
+          <p>Filing & documentation support.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Copyright Registration&body=Hello, I would like to get a quote for Copyright Registration service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="ip">
+          <h3>Patent Registration</h3>
+          <p>Patent search + drafting + filing support.</p>
+          <p>Compliance process included.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Patent Registration&body=Hello, I would like to get a quote for Patent Registration service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="ip">
+          <h3>PSQCA Registration</h3>
+          <p>Authority: PSQCA</p>
+          <p>License application & renewal.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: PSQCA Registration&body=Hello, I would like to get a quote for PSQCA Registration service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="ip">
+          <h3>Halal Certification</h3>
+          <p>Recognized Authority: Pakistan Halal Authority</p>
+          <p>Documentation + audit preparation.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Halal Certification&body=Hello, I would like to get a quote for Halal Certification service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="ip">
+          <h3>ISO Certification Support</h3>
+          <p>ISO 9001 / 14001 / 45001</p>
+          <p>Docs + SOPs + audit preparation.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: ISO Certification Support&body=Hello, I would like to get a quote for ISO Certification Support service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- ===================== USA LLC ===================== -->
+        <div class="service-card" data-category="usa">
+          <h3>USA LLC Formation <span class="badge">Popular</span></h3>
+          <p>Timeline: 3 Business Days</p>
+          <p>Requirements: Passport, Utility Bill</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: USA LLC Formation&body=Hello, I would like to get a quote for USA LLC Formation service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- ===================== ACCOUNTS ===================== -->
+        <div class="service-card" id="bookkeeping" data-category="accounts">
+          <h3>Book Keeping Services</h3>
+          <p>Daily entries + ledger + reconciliation</p>
+          <p>Sales/purchase + journals + adjustments.</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Book Keeping Services&body=Hello, I would like to get a quote for Book Keeping Services. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts">
+          <h3>Financial Reporting</h3>
+          <p>P&L, Balance Sheet, Cash Flow, Trial Balance</p>
+          <p>Monthly / Quarterly / Annual Reports</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Financial Reporting&body=Hello, I would like to get a quote for Financial Reporting service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts">
+          <h3>Bank Reconciliation</h3>
+          <p>Bank matching + outstanding tracking</p>
+          <p>Error correction & adjustments</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Bank Reconciliation&body=Hello, I would like to get a quote for Bank Reconciliation service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts">
+          <h3>Accounts Payable & Receivable</h3>
+          <p>Invoicing + supplier bills</p>
+          <p>Follow-ups + aging reports</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Accounts Payable & Receivable&body=Hello, I would like to get a quote for Accounts Payable & Receivable service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts">
+          <h3>Payroll Management</h3>
+          <p>Salary processing + payslips</p>
+          <p>Attendance/leave + tax deductions</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Payroll Management&body=Hello, I would like to get a quote for Payroll Management service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts">
+          <h3>Tax Preparation & Filing</h3>
+          <p>Income tax + Sales tax/VAT + Withholding</p>
+          <p>Return preparation with documentation support</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Tax Preparation & Filing&body=Hello, I would like to get a quote for Tax Preparation & Filing service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts">
+          <h3>Tax Compliance Services</h3>
+          <p>Income tax + Sales tax/VAT + WHT + Compliance</p>
+          <p>Notices reply + audit/representation</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Tax Compliance Services&body=Hello, I would like to get a quote for Tax Compliance Services service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="accounts">
+          <h3>Quarterly Withholding Statements Filing</h3>
+          <p>Quarter-wise WHT compliance</p>
+          <p>Requirements inside</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Quarterly Withholding Statements Filing&body=Hello, I would like to get a quote for Quarterly Withholding Statements Filing service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- ===================== BOOKKEEPING ===================== -->
+        <div class="service-card" data-category="bookkeeping">
+          <h3>Business Advisory</h3>
+          <p>Budgeting + forecasting + cost control</p>
+          <p>Business performance review</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Business Advisory&body=Hello, I would like to get a quote for Business Advisory service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="service-card" data-category="bookkeeping">
+          <h3>Cleanup & Backlog Accounting</h3>
+          <p>Previous years data update</p>
+          <p>Error correction + restructuring</p>
+          <div class="card-footer">
+            <a href="mailto:abc@gmail.com?subject=Quote Request: Cleanup & Backlog Accounting&body=Hello, I would like to get a quote for Cleanup & Backlog Accounting service. Please provide me with the details." class="get-quote-btn">Get Quote</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+
+    <div class="site-footer-top">
+      <!-- Left -->
+      <div class="footer-brand">
+        <img src="images/piic2.png" alt="The Accountant" class="footer-logo" />
+
+        <span class="footer-tag">Trusted Tax & Compliance Services</span>
+
+        <p class="footer-desc">
+          We provide reliable tax filing, compliance, registration, and bookkeeping
+          services for individuals and businesses across Pakistan with a secure,
+          clear, and professional process.
+        </p>
+
+        <div class="footer-social">
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://wa.me/923336815891" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-links-area">
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="tax-calculator.html">Tax Calculator</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy-policy.html">Privacy Statement</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact</h4>
+          <a href="tel:+923336815891">+92333 6815891</a>
+          <a href="mailto:info@theaccountant.pk">info@theaccountant.pk</a>
+          <a href="contact.html">Get Consultation</a>
+          <a href="services.html">Start Filing</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>© 2018 - 2026 The Accountant (Pvt) Limited. All rights reserved.</p>
+     
+    </div>
+
+  </div>
+</footer>
+
+</body>
+
+</html>
